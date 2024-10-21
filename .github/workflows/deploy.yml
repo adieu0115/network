@@ -20,8 +20,8 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@<EC2-IP> << 'EOF'
-            cd /path/to/your/project
+          ssh -o StrictHostKeyChecking=no ec2-user@18.228.170.43 << 'EOF'
+            cd /app
             docker-compose down
             git pull origin main
             docker-compose up -d --build
