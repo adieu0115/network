@@ -1,11 +1,15 @@
+# 1단계: 빌드 단계
 FROM gradle:7.6.1-jdk17 AS build
 
 WORKDIR /app
 
 # Gradle 설정 파일 복사
-COPY build.gradle settings.gradle gradle.properties ./
+COPY build.gradle settings.gradle ./
 COPY gradlew ./
 COPY gradle ./gradle
+
+# Gradlew 실행 권한 부여 (필요한 경우)
+RUN chmod +x gradlew
 
 # 의존성 캐싱을 위한 Gradle 빌드
 RUN ./gradlew build -x test --no-daemon || return 0
