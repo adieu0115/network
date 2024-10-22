@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController("/")
 public class HelloController
 {
-    static final String message = "그만 놀고 공부해라.";
+    static final String message = "hello world.";
 
     @RequestMapping("/hello")
     public String hello()
