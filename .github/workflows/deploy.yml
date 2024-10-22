@@ -30,7 +30,7 @@ jobs:
 
     steps:
       - name: EC2 서버에 배포
-        uses: appleboy/ssh-action@v0.1.16
+        uses: appleboy/ssh-action@v0.1.6
         with:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USER }}
